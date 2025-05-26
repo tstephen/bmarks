@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import UTC, datetime
 from pydantic import BaseModel, Field
 
 
@@ -9,5 +9,5 @@ class Outline(BaseModel):
     title: str
     category: str = None
     url: str 
-    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created: datetime = Field(default_factory=lambda: datetime.now(UTC))
     status: str = "archive"

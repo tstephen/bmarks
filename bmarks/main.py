@@ -19,7 +19,7 @@ def read_outlines_from_csv(csv_path):
                 title=row.get('title', ''),
                 url=row.get('url', ''),
                 category=row.get('tags'),
-                created_at=datetime.fromtimestamp(int(row['time_added']), tz=timezone.utc) if 'time_added' in row and row['time_added'] else datetime.now(datetime.timezone.utc),
+                created=datetime.fromtimestamp(int(row['time_added']), tz=timezone.utc) if 'time_added' in row and row['time_added'] else datetime.now(datetime.timezone.utc),
                 status=row.get('status', 'archive')
             )
             outlines.append(outline)

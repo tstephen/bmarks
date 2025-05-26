@@ -13,8 +13,10 @@
             text="{{ outline.title|e }}"
             type="{{ outline.type|default('link')|e }}"
             {% if outline.xmlUrl %}xmlUrl="{{ outline.xmlUrl|e }}"{% endif %}
-            {% if outline.url %}htmlUrl="{{ outline.url|e }}"{% endif %}
+            {% if outline.htmlUrl %}htmlUrl="{{ outline.htmlUrl|e }}"{% endif %}
+            {% if outline.url %}url="{{ outline.url|e }}"{% endif %}
             {% if outline.category %}category="{{ outline.category|replace('|', '/')|e }}"{% endif %}
+            {% if outline.created %}dateCreated="{{ outline.created|e }}"{% endif %}
             {% if outline.description %}description="{{ outline.description|e }}"{% endif %}
         />
         {% endfor %}
